@@ -30,7 +30,8 @@ hurrengoa.onclick = () => {
 
 let aurrekoa = document.querySelector('#aurrekoa')
 aurrekoa.onclick = () => {
-    index-- 
+    index--
+    index<0 ? index = datubasea.length - 1:
     index = index % datubasea.length
     aldatu()   
 }
