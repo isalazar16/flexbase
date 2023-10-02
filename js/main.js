@@ -38,3 +38,6 @@ aurrekoa.onclick = () => {
 
 aldatu()
 
+const base2 = "https://openlibrary.org/search.jason?isbn="
+
+// fetch("https://openlibrary.org/search.json?isbn=9781491920497").then( resp => resp.json()).then( resp => console.log(resp.docs[0].title))
