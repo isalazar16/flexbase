@@ -38,6 +38,38 @@ aurrekoa.onclick = () => {
 
 aldatu()
 
-const base2 = "https://openlibrary.org/search.jason?isbn="
+const base2 = "https://openlibrary.org/search.json?isbn="
 
-// fetch("https://openlibrary.org/search.json?isbn=9781491920497").then( resp => resp.json()).then( resp => console.log(resp.docs[0].title))
+// fetch("https://openlibrary.org/search.json?isbn=").then( resp => resp.json()).then( resp => console.log(resp.docs[0].title))
+
+let bilatu  = document.querySelector('#bilatu')
+
+bilatu.onclick = () => {
+    fetch(base2 + "9781491920497").then( resp => resp.json()).then( resp => {
+        let isbn = "9781491920497"
+        let egilea = resp.docs[0].author_name[0]
+        let data = resp.docs[0].publish_date[1]
+        let izenburua = resp.docs[0].title
+        let filename = resp.docs[0].cover_i + "-M.jpg"
+        console.log(isbn)
+        console.log(egilea)
+        console.log(data)
+        console.log(izenburua)
+        console.log(filename)
+        
+        datubaseraSartu(isbn, egilea, data, izenburua, filename)
+
+    })
+}
+
+let datubaseraSartu = (isbn, egilea, data, izenburua, filename) => {
+    liburuBerri = {
+        "isbn": isbn,
+        "egilea": egilea,
+        "data": data,
+        "izenburua": izenburua,
+        "filename": filename
+    }
+    let luzeraBerria = datubasea.push
+
+}
